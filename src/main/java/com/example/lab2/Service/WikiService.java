@@ -47,7 +47,6 @@ public class WikiService {
         WikiPage wikiPage = new WikiPage();
         wikiPage.setTerm(dto.getTerm());
         wikiPage.setSummary(dto.getSummary());
-        // Assuming you set category somewhere before saving
         WikiPage saved = wikiPageRepository.save(wikiPage);
         cache.putWikiPage(saved.getId(), saved);
         cache.removeWikiPagesByCategory(categoryId);
